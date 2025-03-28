@@ -24,5 +24,9 @@ jobs:
         echo "Automated commit created by GitHub Actions" >> commit_file.txt
         git add commit_file.txt
         git commit -m "Daily commit"
-        git push
+      
+    - name: Push changes
+      run: |
+        git push https://x-access-token:${ secrets.GITHUB_TOKEN }@github.com/${ github.repository }.git
+
 
