@@ -1,0 +1,22 @@
+
+name: Daily Commit Workflow
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Runs once per day at 12:00 PM UTC
+  workflow_dispatch:
+
+jobs:
+  commit_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Create commit with email {USER_EMAIL}
+      run: |
+        echo "Automated commit created by GitHub Actions" >> commit_file.txt
+        git add commit_file.txt
+        git commit -m "Daily commit"
+        git push
