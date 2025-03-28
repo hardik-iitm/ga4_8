@@ -14,7 +14,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Create commit with email {USER_EMAIL}
+    - name: Create commit with email 22f3002291@ds.study.iitm.ac.in
       run: |
         echo "Automated commit created by GitHub Actions" >> commit_file.txt
         git add commit_file.txt
