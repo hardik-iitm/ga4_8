@@ -14,9 +14,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set Git user info
+      run: |
+        git config --global user.email "22f3002291@ds.study.iitm.ac.in"
+        git config --global user.name "Automated GitHub Action"
+      
     - name: Create commit with email 22f3002291@ds.study.iitm.ac.in
       run: |
         echo "Automated commit created by GitHub Actions" >> commit_file.txt
         git add commit_file.txt
         git commit -m "Daily commit"
         git push
+
