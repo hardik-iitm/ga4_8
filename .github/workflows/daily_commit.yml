@@ -27,4 +27,4 @@ jobs:
       
     - name: Push changes
       run: |
-        git push https://x-access-token:${ secrets.GITHUB_TOKEN }@github.com/${ github.repository }.git
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
